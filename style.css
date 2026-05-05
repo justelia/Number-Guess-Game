@@ -1,0 +1,92 @@
+/* Basic reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh; /* full height viewport */
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff6f61, #ff9a76);
+  padding: 20px 15px;
+}
+
+.game {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  text-align: center;
+  width: 350px;
+  max-width: 95%;
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-size: clamp(20px, 6vw, 24px);
+  color: #333;
+}
+
+input[type="number"],
+button {
+  width: 80%; /* slightly narrower than container for balance */
+  padding: 12px;
+  margin: 10px 0;
+  font-size: clamp(14px, 3vw, 16px);
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type="number"] {
+  text-align: center;
+}
+
+button {
+  background: #ff6f61;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #e85c50;
+  transform: scale(1.05);
+}
+
+#guess-result {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: clamp(16px, 4vw, 18px);
+  color: #444;
+}
+
+/* Responsive for mobiles */
+@media (max-width: 480px) {
+  .game {
+    width: 320px;
+    padding: 20px 18px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  input[type="number"],
+  button {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  #guess-result {
+    font-size: 16px;
+  }
+}
